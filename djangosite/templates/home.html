@@ -7,4 +7,12 @@
 {{ user }}
 {{ user.is_authenticated }}
 
+{% if user.is_authenticated%}
+    <h1>User data loaded</h1>
+    {% for i in my_list%}
+        <li> {{i}} </li>
+    {% endfor %}
+{% endif %}
+
+
 {% endblock %}

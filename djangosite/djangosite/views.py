@@ -3,12 +3,20 @@ from django.shortcuts import render
 from django.template.loader import get_template
 
 
-def home_page(request):
-    return render(request,'home.html',{"title":"Welcome my Home page"})
+# # Template context processor
+# def home_page(request):
+#     return render(request,'home.html',{"title":"Welcome my Home page"})  
 
+
+# Template Tags 
+def home_page(request):
+    my_title="Hello there..."
+    context ={"title":my_title,"my_list":[1,2,3,4,5]}
+    return render(request,"home.html",context)
 
 def about_page(request):
     return render(request,'about.html',{"title":"About Us"})
+    
 
 
 def product_page(request):
